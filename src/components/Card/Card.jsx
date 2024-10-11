@@ -1,9 +1,24 @@
+import './card.scss';
 
-
-const Card = () => {
+const Card = ({item}) => {
     return (
-        <div>
-            <h1>card</h1>
+        <div className="col-3">
+            <div className="card">
+                <img src={item.image} alt="" className="card-img" />
+                <h3 className="card-title">{
+                item.title.length > 30
+                ? item.title.substr(0, 27).trim() + '...'
+                : item.title
+                }</h3>
+                <p className="card-text">{
+                item.description.length > 30
+                ? item.description.substr(0, 27).trim() + '...'
+                : item.description
+                }</p>
+                <p className="card-text">${item.price}</p>
+                <button className="card-btn">buy</button>
+            </div>
+
         </div>
     );
 }

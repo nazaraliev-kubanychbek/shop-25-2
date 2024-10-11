@@ -6,6 +6,9 @@ const Header = () => {
     const categories = useSelector(s => s.reducer.categories);
     return (
         <header className='header'>
+            <div className="header-container container">
+
+
             <h1 className='header-logo'><Link to={'/'} >shop</Link></h1>
 
             <nav className="header-nav">
@@ -21,6 +24,7 @@ const Header = () => {
                 <Link to={'/'} className='header-nav-link'>home</Link>
                 <Link to={'/cart'} className='header-nav-link'>cart</Link>
             </nav>
+            </div>
         </header>
     );
 }
